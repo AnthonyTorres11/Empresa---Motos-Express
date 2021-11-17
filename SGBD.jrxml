@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SGBD" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0a3d7337-b309-4334-96a7-7edea0b84bca">
+	<property name="ireport.zoom" value="1.2396694214876043"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     entrega."id_entrega" AS entrega_id_entrega,
+     entrega."id_empleado" AS entrega_id_empleado,
+     entrega."sol_id_empleado" AS entrega_sol_id_empleado,
+     entrega."id_cliente" AS entrega_id_cliente,
+     entrega."tipo_entrega" AS entrega_tipo_entrega,
+     entrega."cantdad_entrega" AS entrega_cantdad_entrega,
+     entrega."precio_pagar" AS entrega_precio_pagar,
+     entrega."id_solicitud" AS entrega_id_solicitud,
+     sector."id_sector" AS sector_id_sector,
+     sector."id_entrega" AS sector_id_entrega,
+     sector."nombre_sector" AS sector_nombre_sector,
+     sector."cuidad_psect" AS sector_cuidad_psect,
+     sector."cd_postal_sect" AS sector_cd_postal_sect,
+     sector."entrega_sect" AS sector_entrega_sect
+FROM
+     "public"."entrega" entrega INNER JOIN "public"."sector" sector ON entrega."id_entrega" = sector."id_entrega"]]>
+	</queryString>
+	<field name="entrega_id_entrega" class="java.lang.Integer"/>
+	<field name="entrega_id_empleado" class="java.lang.Integer"/>
+	<field name="entrega_sol_id_empleado" class="java.lang.Integer"/>
+	<field name="entrega_id_cliente" class="java.lang.Integer"/>
+	<field name="entrega_tipo_entrega" class="java.lang.String"/>
+	<field name="entrega_cantdad_entrega" class="java.math.BigDecimal"/>
+	<field name="entrega_precio_pagar" class="java.math.BigDecimal"/>
+	<field name="entrega_id_solicitud" class="java.lang.Integer"/>
+	<field name="sector_id_sector" class="java.lang.Integer"/>
+	<field name="sector_id_entrega" class="java.lang.Integer"/>
+	<field name="sector_nombre_sector" class="java.lang.String"/>
+	<field name="sector_cuidad_psect" class="java.lang.String"/>
+	<field name="sector_cd_postal_sect" class="java.lang.String"/>
+	<field name="sector_entrega_sect" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="107" splitType="Stretch">
+			<staticText>
+				<reportElement x="144" y="11" width="277" height="20" uuid="32fb4a68-d6e7-4b46-a614-e1224e2f9077"/>
+				<textElement textAlignment="Center">
+					<font fontName="Georgia" size="14"/>
+				</textElement>
+				<text><![CDATA[Universidad Laica Eloy Alfaro de Manabí]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="144" y="43" width="277" height="20" uuid="ded64114-5ce4-4dda-b1de-fb95701b30f1"/>
+				<textElement textAlignment="Center">
+					<font fontName="Georgia" size="14"/>
+				</textElement>
+				<text><![CDATA[Tecnología de la Información]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="144" y="76" width="277" height="20" uuid="133b90a9-f2f7-4f77-b96f-11fadd55a201"/>
+				<textElement textAlignment="Center">
+					<font fontName="Georgia" size="14"/>
+				</textElement>
+				<text><![CDATA[F a c c i]]></text>
+			</staticText>
+			<image>
+				<reportElement x="15" y="11" width="100" height="85" uuid="f345f0f8-645e-4a7e-880c-a9a66681ddbf"/>
+				<imageExpression><![CDATA["C:\\Users\\COMPU-TEACH\\OneDrive - ULEAM\\Uleam - Materias\\logo_ULEAM_2017_vertical.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="41" splitType="Stretch">
+			<staticText>
+				<reportElement x="393" y="10" width="47" height="20" uuid="2c7f629c-160e-4f98-aef9-579719df0a8f"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Georgia" size="12"/>
+				</textElement>
+				<text><![CDATA[Ciudad:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="455" y="10" width="80" height="20" uuid="34322e0e-ff48-415f-9ba8-4bb355613f22"/>
+				<textElement verticalAlignment="Top">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sector_cuidad_psect}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="15" y="10" width="63" height="20" uuid="6969e593-3b05-47b6-aed6-3b5b2e33e2f0"/>
+				<textElement>
+					<font fontName="Georgia" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="74" y="10" width="197" height="20" uuid="86cde7d9-20a9-40a9-a37a-7f84e65c8857"/>
+				<textElement>
+					<font fontName="Georgia" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Torres Sánchez Anthony Javier]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="285" y="10" width="44" height="20" uuid="34c1393d-adcf-4380-8406-895d031e2034"/>
+				<textElement>
+					<font fontName="Georgia" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Curso:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="329" y="10" width="44" height="20" uuid="cd73af18-042a-4c58-83fd-3ca3264b55f9"/>
+				<textElement>
+					<font fontName="Georgia" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA["A"]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="37" splitType="Stretch">
+			<staticText>
+				<reportElement x="122" y="15" width="115" height="20" uuid="ec496c06-5e25-4ce8-9b8d-71acf84d568f"/>
+				<textElement>
+					<font fontName="Georgia" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre  del Sector]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="421" y="15" width="114" height="20" uuid="506a595a-432a-45ea-b745-8b7951713bba"/>
+				<textElement>
+					<font fontName="Georgia" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Entregas en el Sector]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="17" width="100" height="20" uuid="77ef17cb-016f-4fd5-8798-6c3aef52be3f"/>
+				<textElement>
+					<font fontName="Georgia"/>
+				</textElement>
+				<text><![CDATA[Id Sector]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="259" y="15" width="100" height="20" uuid="48c0999a-4689-4982-8948-cf2fd4ade7ee"/>
+				<textElement>
+					<font fontName="Georgia" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo de Entrega]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="40" splitType="Stretch">
+			<textField>
+				<reportElement x="122" y="10" width="100" height="20" uuid="f15e8f09-c35e-4281-85ab-c81f1a462b51"/>
+				<textElement>
+					<font fontName="Georgia"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sector_nombre_sector}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="421" y="10" width="100" height="20" uuid="7ca34624-3d19-4f74-a3d2-827c6c44fc3d"/>
+				<textElement textAlignment="Center">
+					<font fontName="Georgia"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sector_entrega_sect}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="15" y="10" width="100" height="20" uuid="ae42f44a-ff7e-4101-af9a-367a6dab7356"/>
+				<textElement>
+					<font fontName="Georgia"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sector_id_sector}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="259" y="10" width="150" height="20" uuid="621cbbd0-d9f8-45e8-b991-38d01d183784"/>
+				<textElement>
+					<font fontName="Georgia"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{entrega_tipo_entrega}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="25" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="235" splitType="Stretch">
+			<stackedBar3DChart>
+				<chart>
+					<reportElement x="15" y="24" width="520" height="189" uuid="41b50f37-13b3-4e6a-ade8-a93fddfc518c"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA["NOMBRE SECTOR"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{sector_nombre_sector}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{entrega_precio_pagar}]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<bar3DPlot>
+					<plot/>
+					<itemLabel/>
+					<categoryAxisFormat>
+						<axisFormat/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat/>
+					</valueAxisFormat>
+				</bar3DPlot>
+			</stackedBar3DChart>
+		</band>
+	</summary>
+</jasperReport>
