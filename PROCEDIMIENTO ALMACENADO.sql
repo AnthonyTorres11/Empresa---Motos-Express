@@ -20,7 +20,7 @@ begin
 		RAISE NOTICE 
 			'
 			MOTORIZADO: % 
-        ESTOS SON LOS SACRAMENTOS REALIZADOS Y LA CANTIDAD DE ESTE SACERDOTE:
+        ESTOS SON LOS ENVIOS REALIZADOS POR EL MOTORIZADO:
 			',
 			datos.Nombre_Empleado;
 		while (found) loop 
